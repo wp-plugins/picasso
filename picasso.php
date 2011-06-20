@@ -4,7 +4,7 @@
 Plugin Name: Picsso - WordPress Albums
 Plugin URI: http://www.johnciacia.com/propel/
 Description: Extend the WordPress gallery be adding support of albums.
-Version: 1.1.1
+Version: 1.1.2
 Author: John Ciacia
 Author URI: http://www.johnciacia.com
 
@@ -35,7 +35,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 add_shortcode('album', 'picasso_album');
 
-function picasso_album($atts) {
+function picasso_album($attr) {
 	
 	global $post, $wp_locale;
 	
