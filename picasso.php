@@ -34,6 +34,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  * http://codex.wordpress.org/Gallery_Shortcode
  */
 add_shortcode('album', 'picasso_album');
+add_shortcode('picasso', 'picasso_album');
 
 function picasso_album($attr) {
 	
