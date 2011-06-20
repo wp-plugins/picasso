@@ -4,7 +4,7 @@
 Plugin Name: Picsso - WordPress Albums
 Plugin URI: http://www.johnciacia.com/propel/
 Description: Extend the WordPress gallery be adding support of albums.
-Version: 1.1.2
+Version: 1.1.3
 Author: John Ciacia
 Author URI: http://www.johnciacia.com
 
@@ -59,6 +59,7 @@ function picasso_album($attr) {
 	extract(shortcode_atts(array(
 		'order'      => 'ASC',
 		'orderby'    => 'menu_order ID',
+		'title'      => 'no',
 		'id'         => $post->ID,
 		'itemtag'    => 'dl',
 		'icontag'    => 'dt',
@@ -137,6 +138,10 @@ function picasso_album($attr) {
 		$output .= "<a href='$permalink'>";
 		$output .= get_the_post_thumbnail($gallery->ID, 'thumbnail');
 		$output .= "</a>";
+		if($title != "no") {
+			$output .= "<br />";
+			$output .= get_the_title($gallery->ID); 
+		}
 		$output .= "</$icontag>";
 		if ($captiontag && trim($attachment->post_excerpt)) {
 			$output .= "
