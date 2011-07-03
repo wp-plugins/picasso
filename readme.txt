@@ -2,8 +2,8 @@
 Contributors: sidewindernet
 Tags: album, gallery
 Requires at least: 2.9
-Tested up to: 3.1.3
-Stable tag: 1.1.3
+Tested up to: 3.1.4
+Stable tag: 1.1.4
 
 This plugin allows users to create albums (gallery containers).
 
