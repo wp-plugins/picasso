@@ -1,10 +1,9 @@
 <?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 /*
 Plugin Name: Picsso - WordPress Albums
-Plugin URI: http://www.johnciacia.com/propel/
-Description: Extend the WordPress gallery be adding support for albums.
-Version: 1.1.4
+Plugin URI: http://www.johnciacia.com/picasso/
+Description: Extend the WordPress gallery be adding support of albums.
+Version: 1.1.2
 Author: John Ciacia
 Author URI: http://www.johnciacia.com
 
@@ -34,9 +33,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  * http://codex.wordpress.org/Gallery_Shortcode
  */
 add_shortcode('album', 'picasso_album');
-add_shortcode('picasso', 'picasso_album');
 
-function picasso_album($attr) {
+function picasso_album($atts) {
 	
 	global $post, $wp_locale;
 	
@@ -59,7 +57,6 @@ function picasso_album($attr) {
 	extract(shortcode_atts(array(
 		'order'      => 'ASC',
 		'orderby'    => 'menu_order ID',
-		'title'      => 'no',
 		'id'         => $post->ID,
 		'itemtag'    => 'dl',
 		'icontag'    => 'dt',
@@ -138,10 +135,6 @@ function picasso_album($attr) {
 		$output .= "<a href='$permalink'>";
 		$output .= get_the_post_thumbnail($gallery->ID, 'thumbnail');
 		$output .= "</a>";
-		if($title != "no") {
-			$output .= "<br />";
-			$output .= get_the_title($gallery->ID); 
-		}
 		$output .= "</$icontag>";
 		if ($captiontag && trim($attachment->post_excerpt)) {
 			$output .= "
